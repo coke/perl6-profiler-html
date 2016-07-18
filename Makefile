@@ -8,10 +8,10 @@ gen/original.json: gen
 	grep rawData gen/original.html | head -1 > gen/original.json
 
 gen/template.html:
-	cp templates/template.html gen/template.html
+	cp src/template.html gen/template.html
 
 gen/sample.html: gen/original.json gen/template.html
-	perl6 bin/construct.p6 templates/template.html gen/original.json > gen/sample.html
+	perl6 bin/construct.p6 src/template.html gen/original.json > gen/sample.html
 	@echo "new sample in gen/sample.html"
 
 clean:
